@@ -1,31 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neema Peter | Student 77366</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neema Peter | Student 77366</title>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+}
+
+section{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    background:#dbf4e4;
+}
+
+/* Hex code display box */
+
+h2{
+    background:black;
+    color:white;
+    padding:20px 40px;
+    border-radius:6px;
+}
+
+#bg-color{
+    background:#1ed760;
+    padding:6px 12px;
+    border-radius:4px;
+}
+
+/* Button styling */
+
+button{
+    margin-top:40px;
+    padding:15px 35px;
+    border:none;
+    border-radius:40px;
+    font-size:18px;
+    color:white;
+    background:linear-gradient(to right, #1d2bff, #0038ff);
+    cursor:pointer;
+}
+
+button i{
+    margin-right:10px;
+}
+
+</style>
 </head>
 
 <body>
 
 <section id="section">
 
-    <h2>Background colour: <span id="bg-color">#ffffff</span></h2>
+<h2>Background Colour: <span id="bg-color">#dbf4e4</span></h2>
 
-    <button id="change-color">Click me</button>
+<button id="change-color">
+<i class="fa-solid fa-paint-roller"></i>
+Click me
+</button>
 
 </section>
 
 
 <script>
 
+// Get elements
 const btncolour = document.getElementById('change-color');
 const boxdisplay = document.getElementById('bg-color');
 const bigsection = document.getElementById('section');
 
+// Generate random number
+function getRandomNumber(max){
+    return Math.floor(Math.random() * max);
+}
+
+// Button click event
 btncolour.addEventListener('click', () => {
 
     let strHexColour = '#';
+
     const addhex = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F'];
 
     for (let i = 0; i < 6; i++) {
@@ -36,10 +100,6 @@ btncolour.addEventListener('click', () => {
     bigsection.style.backgroundColor = strHexColour;
 
 });
-
-function getRandomNumber(max){
-    return Math.floor(Math.random() * max);
-}
 
 </script>
 
